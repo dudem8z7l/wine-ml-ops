@@ -1,6 +1,6 @@
 import pandas as pd 
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import GradientBoostingClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -23,7 +23,7 @@ X_train, X_test, y_train, y_test = train_test_split(df, y, test_size=0.2, random
 #################################
 
 # Fit a model on the train section
-regr = RandomForestRegressor(max_depth=2, random_state=seed)
+regr = GradientBoostingClassifier(random_state=seed)
 regr.fit(X_train, y_train)
 
 # Report training set score
